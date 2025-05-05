@@ -1,21 +1,84 @@
 Please answer these questions before submitting your issue.
 
 1. What did you do? If possible, provide a simple script for reproducing the error.
-
+I was making HTTP GET request using php cURL (client application) on application running on swoole (server application)
 
 
 2. What did you expect to see?
-
+Heep response coming from swoole application
 
 
 3. What did you see instead?
+[2025-05-04 21:11:54 #12352.0]  WARNING Worker::report_error(): worker(pid=12362, id=1) abnormal exit, status=0, signal=11
 
+A bug occurred in Swoole-v6.0.2, please report it.
+The Swoole developers probably don't know about it,
+and unless you report it, chances are it won't be fixed.
+You can read How to report a bug doc before submitting any bug reports:
+>> https://github.com/swoole/swoole-src/blob/master/.github/ISSUE.md 
+Please do not send bug reports in the mailing list or personal letters.
+The issue page is also suitable to submit feature requests.
+
+OS: Linux 5.15.0-139-generic #149~20.04.1-Ubuntu SMP Wed Apr 16 08:29:56 UTC 2025 x86_64
+GCC_VERSION: 9.4.0
+OPENSSL_VERSION: OpenSSL 1.1.1f  31 Mar 2020
+PHP_VERSION : 8.4.5
 
 
 4. What version of Swoole are you using (show your `php --ri swoole`)?
+swoole
+
+Swoole => enabled
+Author => Swoole Team <team@swoole.com>
+Version => 6.0.2
+Built => Apr  7 2025 19:59:48
+coroutine => enabled with boost asm context
+epoll => enabled
+eventfd => enabled
+signalfd => enabled
+cpu_affinity => enabled
+spinlock => enabled
+rwlock => enabled
+sockets => enabled
+openssl => OpenSSL 1.1.1f  31 Mar 2020
+dtls => enabled
+http2 => enabled
+json => enabled
+curl-native => enabled
+curl-version => 7.68.0
+c-ares => 1.15.0
+mutex_timedlock => enabled
+pthread_barrier => enabled
+futex => enabled
+mysqlnd => enabled
+coroutine_pgsql => enabled
+coroutine_sqlite => enabled
+
+Directive => Local Value => Master Value
+swoole.enable_library => On => On
+swoole.enable_fiber_mock => Off => Off
+swoole.enable_preemptive_scheduler => Off => Off
+swoole.display_errors => On => On
+swoole.use_shortname => On => On
+swoole.unixsock_buffer_size => 8388608 => 8388608
 
 
 
 5. What is your machine environment used (show your `uname -a` & `php -v` & `gcc -v`) ?
+Linux coder201 5.15.0-139-generic #149~20.04.1-Ubuntu SMP Wed Apr 16 08:29:56 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 
+PHP 8.4.6 (cli) (built: Apr 11 2025 02:18:49) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.4.6, Copyright (c) Zend Technologies
+    with Zend OPcache v8.4.6, Copyright (c), by Zend Technologies
+
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
 
